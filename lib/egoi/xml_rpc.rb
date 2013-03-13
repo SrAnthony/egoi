@@ -86,15 +86,25 @@ class Egoi::XmlRpc
 
   def call(method_name, *args)
     result = retrying_call(method_name, merge_defaults(args))
-    if friendly_messages? && String === result && (error_message = EgoiException.decode(result))
+    if friendly_messages? && String === result && (error_message = Egoi::EgoiException.new(result).message)
       return error_message
     end
     result
   end
 
   def merge_defaults(arguments)
-    if apikey
-      { apikey: apikey }.merge(arguments.first || {})
+    if arguments.is_a?(Hash)
+      if apikey
+        { apikey: apikey }.merge(arguments)
+      else
+        arguments
+      end
+    elsif arguments.is_a?(Array) && arguments.size <= 1
+      if apikey
+        { apikey: apikey }.merge(arguments.first || {})
+      else
+        arguments.first || {}
+      end
     else
       arguments
     end

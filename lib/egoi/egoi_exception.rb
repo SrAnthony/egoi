@@ -2,11 +2,15 @@
 
 class Egoi::EgoiException
 
-  def decode_error(error)
-    error_messages[error]
+  def initialize(error_code)
+    @message = self.class.error_messages[error_code]
   end
 
-  def error_messages
+  def message
+    @message
+  end
+
+  def self.error_messages
     @error_messages ||= {
       "CANNOT_BE_DELETED" => "A campanha é recorrente ou activada por evento e não pode ser eliminada por API",
       "ALREADY_DELETED" => "A campanha já foi eliminada",
