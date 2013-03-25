@@ -6,11 +6,11 @@ class Egoi::XmlRpc
   def initialize(args = {})
     options = {
       url: 'http://api.e-goi.com/v2/xmlrpc.php',
-      frieldly_messages: true
+      friendly_messages: true
     }.merge(args)
     @apikey = options[:apikey]
     uri = URI.parse(options[:url])
-    @friendly_messages = options[:frieldly_messages]
+    @friendly_messages = options[:friendly_messages]
     @client = XMLRPC::Client.new(uri.host, uri.path)
     @proxy = @client.proxy
   end
@@ -72,7 +72,7 @@ class Egoi::XmlRpc
     @friendly_messages
   end
 
-  private
+  # private
 
   def retrying_call(method_name, args)
     limit = 3
