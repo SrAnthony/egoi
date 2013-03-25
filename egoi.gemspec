@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Egoi::VERSION
   spec.authors       = ["Sinemys"]
   spec.email         = ["info@sinemys.pt"]
-  spec.description   = %q{Write a gem description}
+  spec.description   = %q{Ruby on Rails API Wrapper for E-goi}
   spec.summary       = %q{Write a gem summary}
-  spec.homepage      = "http://github.com/sinemys/egoi"
+  spec.homepage      = "https://github.com/Sinemys/egoi.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
