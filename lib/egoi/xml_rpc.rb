@@ -72,7 +72,7 @@ class Egoi::XmlRpc
     @friendly_messages
   end
 
-  # private
+  private
 
   def retrying_call(method_name, args)
     limit = 3
