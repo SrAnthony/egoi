@@ -42,7 +42,7 @@ describe 'Creating a new list' do
       'canal_voz' => '1',
       'canal_mms' => '0'
     }
-    list_id = @client.call(:createList, params)
+    list_id = @client.createList(params)
     @client.getLists[0]["listnum"].should == list_id["LIST_ID"]
   end
 end

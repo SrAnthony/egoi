@@ -19,15 +19,6 @@ class Egoi::XmlRpc
     api_methods.include? name.to_sym
   end
 
-  def method_missing(method_name, *args, &block)
-    if api_method?(method_name)
-      call(method_name, *args, &block)
-    else
-      super
-    end
-  end
-
-
   def respond_to?(method_name, include_private = false)
     api_method?(method_name) || super
   end
@@ -73,6 +64,14 @@ class Egoi::XmlRpc
   end
 
   private
+
+  def method_missing(method_name, *args, &block)
+    if api_method?(method_name)
+      call(method_name, *args, &block)
+    else
+      super
+    end
+  end
 
   def retrying_call(method_name, args)
     limit = 3
