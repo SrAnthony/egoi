@@ -6,15 +6,11 @@ Simple E-Goi API Wrapper
 
 Add this line to your application's Gemfile:
 
-    gem 'egoi'
+    gem 'egoi', git 'https://github.com/ignicaodigitalbr/egoi'
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install egoi
 
 ## Usage
 
