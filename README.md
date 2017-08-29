@@ -1,6 +1,6 @@
 # Egoi
 
-TODO: Write a gem description
+Simple E-Goi API Wrapper
 
 ## Installation
 
@@ -18,7 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# Create an instance of the xmlrpc connector
+Egoi::XmlRpc.new
+# You may pass arguments to initialize it with specific configs you want
+# Example:
+Egoi::XmlRpc.new(friendly_messages: false, apikey: 'YOUR APIKEY')
+# If you initialize it with an apikey, it will be used in future api calls
+```
+After you have a XmlRpc instance, you may call any of the (E-Goi API)[https://api-docs.e-goi.com/#api-methods]
+methods by calling through it. For instance:
+```
+egoi_client = Egoi::XmlRpc.new
+egoi_client.checklogin(apikey: 'YOUR APIKEY')
+# It will call the api checklogin method with the apikey parameter.
+```
 
 ## Contributing
 
