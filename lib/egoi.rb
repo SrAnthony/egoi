@@ -1,3 +1,3 @@
 require 'egoi/version'
-require 'egoi/egoi_exception'
+require 'egoi/exception_message'
 require 'egoi/client'

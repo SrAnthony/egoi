@@ -88,7 +88,7 @@ module Egoi
       result = retrying_call(method_name, merge_defaults(args))
       if friendly_messages? &&
          result['ERROR'] &&
-         (error_message = Egoi::EgoiException.new(result['ERROR']).message)
+         (error_message = Egoi::ExceptionMessage.new(result['ERROR']).message)
         return error_message
       end
       result
