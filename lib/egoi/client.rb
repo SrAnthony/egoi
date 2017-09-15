@@ -87,6 +87,7 @@ module Egoi
     def call(method_name, *args)
       result = retrying_call(method_name, merge_defaults(args))
       if friendly_messages? &&
+         result.is_a?(Hash) &&
          result['ERROR'] &&
          (error_message = Egoi::ExceptionMessage.new(result['ERROR']).message)
         return error_message
