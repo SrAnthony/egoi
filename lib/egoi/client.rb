@@ -27,6 +27,7 @@ module Egoi
     def api_methods
       @api_methods ||= [
         :getLists,
+        :getExtraFields,
         :addExtraField,
         :addSubscriber,
         :addSubscriberBulk,
