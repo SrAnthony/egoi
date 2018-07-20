@@ -32,6 +32,8 @@ module Egoi
         :addSubscriber,
         :addSubscriberBulk,
         :checklogin,
+        :getAutobots,
+        :startAutobot,
         :createCampaignEmail,
         :createCampaignFAX,
         :createCampaignSMS,
