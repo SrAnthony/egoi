@@ -59,7 +59,8 @@ module Egoi
         :sendFAX,
         :sendSMS,
         :subscriberData,
-        :updateList
+        :updateList,
+        :getTags
       ]
     end
 
